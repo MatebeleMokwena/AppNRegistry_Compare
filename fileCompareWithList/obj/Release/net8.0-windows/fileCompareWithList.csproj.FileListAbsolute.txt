@@ -1,0 +1,39 @@
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.exe
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.deps.json
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.runtimeconfig.json
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.pdb
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\bin\Release\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.csproj.AssemblyReference.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.Form1.resources
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.csproj.GenerateResource.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.AssemblyInfoInputs.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.AssemblyInfo.cs
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.csproj.CoreCompileInputs.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileComp.DD35C117.Up2Date
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\refint\fileCompareWithList.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.pdb
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.genruntimeconfig.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList\fileCompareWithList\obj\Release\net8.0-windows\ref\fileCompareWithList.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.exe
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.deps.json
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.runtimeconfig.json
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\bin\Release\net8.0-windows\fileCompareWithList.pdb
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\bin\Release\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.csproj.AssemblyReference.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.Form1.resources
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.Form2.resources
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.csproj.GenerateResource.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.AssemblyInfoInputs.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.AssemblyInfo.cs
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.csproj.CoreCompileInputs.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileComp.DD35C117.Up2Date
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\refint\fileCompareWithList.dll
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.pdb
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\fileCompareWithList.genruntimeconfig.cache
+C:\Users\tsholofelo.matebele\source\repos\fileCompareWithList V4\fileCompareWithList\obj\Release\net8.0-windows\ref\fileCompareWithList.dll
