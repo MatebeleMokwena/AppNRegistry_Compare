@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -13,6 +13,7 @@ namespace fileCompareWithList
 
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -64,8 +65,8 @@ namespace fileCompareWithList
                         return;
                     }
 
-                    
-                   
+
+
 
                     // Display the path and contents
                     string displayText = JsonConvert.SerializeObject(appList, Formatting.Indented);
@@ -130,33 +131,48 @@ namespace fileCompareWithList
             }
         }
 
-        private AppList ParseTxtFile(string text)
+        private AppList ParseTxtFile(string text)///////////////////////////////////////////////
         {
             AppList appList = new AppList();
             string[] lines = text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
+            // Ensure the first line starts with "Path:" (case-insensitive)
+            if (!lines[0].StartsWith("Path:", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Invalid format in TXT file. First line should start with 'Path:' (case-insensitive).");
+                return null;
+            }
+
             // Extract the Path from the first line
-            appList.Path = lines[0].Replace("Path: ", "").Trim('"');
+            appList.Path = lines[0].Replace("Path:", "").Trim();
 
             // Loop through the remaining lines and extract application data
             foreach (var line in lines.Skip(1)) // Skip the first line (path)
             {
                 string[] parts = line.Split(','); // Use comma as the delimiter
-                if (parts.Length == 2) // We expect two parts: name and size
+
+                if (parts.Length == 3) // Ensure we have 3 parts: name, version, size
                 {
                     string name = parts[0].Trim();
-                    int size = int.TryParse(parts[1].Trim(), out int parsedSize) ? parsedSize : 0;
+                    string version = parts[1].Trim();
+                    int size = int.TryParse(parts[2].Trim(), out int parsedSize) ? parsedSize : 0;
+
+                    // If version is "N/A", handle it gracefully
+                    if (version.Equals("N/A", StringComparison.OrdinalIgnoreCase))
+                    {
+                        version = "Unknown"; // You can store it as "Unknown" or "N/A" directly
+                    }
 
                     appList.Applications.Add(new App
                     {
                         Name = name,
-                        Version = "N/A", // No version info in this case
+                        Version = version,
                         Size = size
                     });
                 }
                 else
                 {
-                    MessageBox.Show("Invalid format in TXT file. Expected format: Name,Size");
+                    MessageBox.Show($"Invalid format in .txt file. Line: {line}. Expected format: name,version,size");
                     return null;
                 }
             }
@@ -164,18 +180,138 @@ namespace fileCompareWithList
             return appList;
         }
 
-        private void btnReg_Click(object sender, EventArgs e)
+        private void SaveFiles(string folderPath)///////////////////////////////////////////// 
+        {
+            string[] files = Directory.GetFiles(folderPath);
+            AppList appList = new AppList { Path = folderPath };
+
+            foreach (var file in files)
+            {
+                try
+                {
+                    FileInfo fileInfo = new FileInfo(file);
+                    string fileName = fileInfo.Name;
+                    string ?fileVersion = FileVersionInfo.GetVersionInfo(file).FileVersion ?? "N/A";
+                    double ?sizeInKb = fileInfo.Length / 1024.0; // Size in KB
+
+                    Console.WriteLine($"Processing file: {fileName}, Version: {fileVersion}, Size: {sizeInKb} KB");
+
+                    appList.Applications.Add(new App
+                    {
+                        Name = fileName,
+                        Version = fileVersion,
+                        Size = (int)sizeInKb
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error processing file {file}: {ex.Message}");
+                }
+            }
+
+            if (appList.Applications.Count == 0)
+            {
+                MessageBox.Show("No applications found in the selected folder.");
+                return;
+            }
+
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
+                saveFileDialog.DefaultExt = "txt";
+                saveFileDialog.AddExtension = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string savePath = saveFileDialog.FileName;
+
+                    try
+                    {
+                        using (StreamWriter writer = new StreamWriter(savePath))
+                        {
+                            writer.WriteLine($"Path: {appList.Path}");
+                            foreach (var app in appList.Applications)
+                            {
+                                writer.WriteLine($"{app.Name},{app.Version},{app.Size}");
+                            }
+                        }
+
+                        MessageBox.Show("Data saved successfully.");
+                        OpenFolderInExplorer(Path.GetDirectoryName(savePath));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error saving data: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Save operation was canceled.");
+                }
+            }
+
+        }
+
+        private void OpenFolderInExplorer(string? folderPath)///////////////////////////////////
+        {
+            try
+            {
+                if (Directory.Exists(folderPath))
+                {
+                    Process.Start(new ProcessStartInfo
+                    {
+                        FileName = folderPath,
+                        UseShellExecute = true,
+                        Verb = "open"
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("Folder does not exist.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening folder: {ex.Message}");
+            }
+        }
+
+        private void btnReg_Click(object sender, EventArgs e)//////////////////////////////////
         {
             Form2 registry = new Form2();
             registry.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)///////////////////////////////////////
         {
             listView1.Items.Clear();
             txtDisplay.Clear();
-            richTextBox1.Clear();   
-            
+            richTextBox1.Clear();
+
+        }
+
+        //Add a preview function
+        private void PreviewTxt() 
+        {
+             //The method should generate the text that would be saved in the same format as saved/to save file and 
+             //display it in a messagebox or richtextbox or dialogue box
+        }
+        private void btnSaveTxt_Click(object sender, EventArgs e)/////////////////////
+        {
+            // Open FolderBrowserDialog for the user to pick a folder
+            using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
+            {
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedFolder = folderDialog.SelectedPath;
+                    //call the preview method
+                    SaveFiles(selectedFolder);
+                }
+                else
+                {
+                    MessageBox.Show("Please select a folder to save the data.");
+                }
+            }
         }
     }
 }
